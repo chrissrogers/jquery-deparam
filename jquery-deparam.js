@@ -37,7 +37,7 @@
       }
         
       // Are we dealing with a name=value pair, or just a name?
-      if (param.length === 2) {
+      if (param.length === 2 && param[1].toString().length > 0) {
         val = decodeURIComponent(param[1]);
           
         // Coerce values.
@@ -85,10 +85,12 @@
         }
           
       } else if (key) {
-        // No value was defined, so set something meaningful.
-        obj[key] = coerce
-          ? undefined
-          : '';
+        // No value was defined, so delete the key
+        if (coerce) {
+          delete obj[key];
+        } else {
+          obj[key] = '';
+        }
       }
     });
       
