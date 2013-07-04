@@ -1,0 +1,10 @@
+{
+  "name": "jquery-bbq-deparam",
+  "version": "1.2.1",
+  "main": "jquery-deparam.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
